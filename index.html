@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tatooine</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Tatooine</h1>
+    <form id="upload-form">
+        <input type="file" id="image-upload" accept="image/*">
+    </form>
+    <canvas id="original-canvas"></canvas>
+    <canvas id="converted-canvas"></canvas>
+    <form id="controls-form">
+        <label for="dithering-algorithm">Dithering Algorithm:</label>
+        <select id="dithering-algorithm">
+            <option value="uniform">Uniform</option>
+            <option value="floyd-steinberg">Floyd-Steinberg</option>
+            <option value="jarvis-judice-ninke">Jarvis-Judice-Ninke</option>
+            <option value="stucki">Stucki</option>
+            <option value="atkinson">Atkinson</option>
+            <option value="burkes">Burkes</option>
+            <option value="sierra">Sierra</option>
+            <option value="two-row-sierra">Two-Row Sierra</option>
+            <option value="sierra-lite">Sierra Lite</option>
+            <option value="bayer">Bayer</option>
+            <option value="random">Random</option>
+        </select>
+        <label for="dithering-threshold">Dithering Threshold:</label>
+        <input type="range" id="dithering-threshold" min="0" max="255" value="128">
+        <label for="contrast">Contrast:</label>
+        <input type="range" id="contrast" min="0" max="2" value="1" step="0.01">
+        <label for="exposure">Exposure:</label>
+        <input type="range" id="exposure" min="0" max="2" value="1" step="0.01">
+    </form>
+    <button id="save-button">Save Image</button>
+    <footer>
+        <script src="image.js"></script>
+        <script src="imageProcessor.js"></script>
+        <script src="dithering.js"></script>
+        <script src="url.js"></script>
+        <script src="main.js"></script>
+    </footer>
+</body>
+</html>
